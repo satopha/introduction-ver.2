@@ -50,9 +50,9 @@ $(function(){
 		return false;
    });
 
-
-
-
+	$(document).ready(function(){
+		$('html').fadeIn(2000);
+	});
 
 
 
