@@ -1,0 +1,426 @@
+
+.display{
+	width:100vw;
+	height:100vh;
+}
+
+body{
+	background-color: #f0f0f0;
+}
+
+/*/////////画面の枠/////////////////////////////*/
+html:before,
+html:after,
+body:before,
+body:after{
+	content: "";
+	position: fixed;
+	display:block;
+	z-index:900;
+}
+
+/*画面上の線*/
+html:before{
+	width: 100vw;
+	left: 0;
+	top: 3%;
+	border-top:2px solid #646464;
+}
+
+/*画面右*/
+html:after{
+	height: 100vh;
+	right: 3%;
+	top: 0;
+	border-right:2px solid #646464;
+}
+
+/*画面下*/
+body:before{
+	width: 100vw;
+	bottom: 3%;
+	left: 0;
+	border-bottom:2px solid #646464;
+}
+
+/*画面左*/
+body:after{
+	height: 100vh;
+	top: 0;
+	left: 3%;
+	border-right:2px solid #646464;
+}
+
+
+/*/////////ハンバーガーメニュー//////////////////////////*/
+
+.hamburger{
+	width: 28px;
+	height: 24px;
+	position: fixed;
+	right: 3%;
+	top: 3%;
+	background-color: #646464;
+	padding:8px;
+	z-index: 900;
+}
+
+.hamburger span{
+	position: relative;
+	display: block;
+	top:9px;
+}
+
+.hamburger span:before,
+.hamburger span:after {
+	content: "";
+	position: absolute;
+}
+
+.hamburger span,
+.hamburger span:before,
+.hamburger span:after{
+	width: 100%;
+	height: 4px;
+	background-color: #fff;
+	border-radius: 2px;
+	align-items: baseline;
+	/*時間的変化のアニメーションを全て指定*/
+	transition: all .5s ease;
+}
+
+.hamburger span:before{
+	top: -9px;
+}
+
+.hamburger span:after{
+	top: 9px;
+}
+
+/*ハンバーガーアニメーション*/
+
+.hamburger.on span,.hamburger.on{
+	background-color: transparent;/*背景色が透明になる*/
+}
+
+.hamburger.on span:before{
+	transform: rotate(45deg) translate(6px,6px);
+}
+
+.hamburger.on span:after{
+	transform: rotate(-45deg) translate(6px,-7px);
+}
+
+.hamburger:hover{
+	opacity: .5;
+	transition: all .3s ease;
+}
+
+/*ハンバーガーメニュー内部*/
+
+nav{
+	position: fixed;
+	width:100vw;
+    margin:auto;
+    top:3%;
+	display: none;
+	background-color: rgba(100,100,100,.8);
+	z-index: 200;
+}
+
+nav ul{
+	display: flex;
+	width:76vw;
+	margin:auto;
+	height: 10vh;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+nav ul li a{
+	font-size:20px;
+	color:#fff;
+}
+
+nav ul li a:hover{
+	opacity: .5;
+	transition: all .3s ease;
+}
+
+/*///////////////////トップに戻るボタン////////////////////////*/
+.backtop{
+	position: fixed;
+	top:50%;
+	left:4%;
+    color:#323232;
+	font-size: 16px;
+	z-index: 300;
+}
+
+/*//////////////////タイトル/////////////////////////////////////*/
+
+.title{
+	font-size: 30px;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	background-image: url('../img/top.png');
+	background-size: cover;
+	background-attachment: fixed;
+	top:0;
+}
+
+.title h1{
+	color: #fff;
+}
+
+/*//////////////////カウントダウン/////////////////////////////////////*/
+
+.limit{
+	display:flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	font-size:30px;
+}
+
+.yycountdown-box{
+	text-align:center;
+	margin:10px 0;
+	color:#000000;
+}
+
+
+/*//////////////////自己紹介/////////////////////////////////////*/
+
+.intro{
+	width:100%;
+	display:flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.in-wrap,.like-wrap{
+	width:100%;
+}
+
+.intro-wrap{
+	margin-right:3%;
+	margin-left:3%;
+	font-size:16px;
+	line-height:24px; 
+	display:flex;
+	justify-content: space-around;
+}
+
+.intro-wrap div{
+	display: flex;
+    align-items: center;
+}
+
+.intro-wrap span{
+	line-height:26px; 
+}
+
+.intro h3,.like h3{
+	width:140px;
+	color: #323232;
+	margin-left:5%;
+	margin-bottom:3%;
+	border-right:solid 2px #696969;
+}
+
+
+
+/*//////////////////目標/////////////////////////////////////*/
+
+.goal{
+	position: relative;
+	display:flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.goal h3{
+	margin-right: 5%;
+	text-align: right;
+	width:82px;
+	height:30px;
+	position: absolute;
+	right:0;
+	top:20%;
+	border-left:solid 2px #696969;
+}
+
+.goal-about{
+	position: absolute;
+	display:flex;
+	align-items: center;
+	justify-content: center;
+	text-align: right;
+	font-size:16px;
+	line-height:24px; 
+	right:5%;
+	background-color: #fff;
+	width:45%;
+	height: 30%;
+	box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+}
+
+
+	.img{
+		width:70%;
+		height:50%;
+		background-image: url('../img/goal2.jpg');
+		background-size: cover;
+	}
+
+/*//////////////////好きなもの、作ったもの/////////////////////////////////////*/
+
+.flex{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.like{
+	display:flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.like h3{
+	width:360px;
+	margin-bottom: 50px;
+}
+
+.slider-wrap{
+	position: relative;
+    width: 70%;
+    z-index: 1;
+    opacity: 1;
+    background-color: #696969;
+}
+
+.img-slide{
+	padding: 10px;
+}
+
+.img-slide img{
+	display: block;
+	width: 100%;
+}
+
+.slick-prev,.slick-next{
+	background-color: transparent;
+	color: #696969;
+	font-size:20px;
+	width:20px;
+
+}
+.slick-prev{
+	position: absolute;
+	top: 50%;
+	left:-30px;
+}
+
+.slick-next{
+	position: absolute;
+	top: 50%;
+	right:-30px;
+}
+
+/*.slide-dots{
+	text-align: center;
+	display:flex;
+	justify-content: center;
+	margin:20px 0;
+}
+
+.slide-dots button{
+	position: relative;
+	color:#fff;
+	text-indent: -9999px;
+	width:30px;
+	background-color: transparent;
+}
+
+.slide-dots button:before{
+	content: "◯";
+	position: absolute;
+	top:0;
+	left: 0;
+	text-indent: 0;
+	text-align: center;
+	width:30px;
+}
+
+li button:before .slick-active {
+	content: "●";
+}*/
+
+/*//////////////////お問い合わせ/////////////////////////////////////*/
+
+.contact{
+	background-color: #696969;
+	height: 200px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.contact h3{
+	width:200px;
+	height:30px;
+	color:#f0f0f0;
+	border-right:solid 1px #fff;
+}
+
+.contact input{
+	width:300px;
+	line-height: 30px;
+	border:solid 1px #696969;
+	box-sizing: border-box;
+}
+
+.contact textarea{
+	width:300px;
+	height: 60px;
+	margin: 20px 0;
+	border:solid 1px #696969;
+	box-sizing: border-box;
+}
+
+form{
+	display: flex;
+	flex-direction: column;
+}
+
+button{
+	width:50px;
+	padding:3px;
+	margin:auto;
+	border:none;
+	background-color: #fff;
+	border-radius: 3px;
+	color:#696969;
+}
+
+button:hover{
+	opacity: .5;
+	transition: all .5s ease;
+}
+
+footer{
+	padding:12px 0 34px;
+	text-align: center;
+	background-color: #696969;
+	border-top: solid 2px #f0f0f0;
+	box-sizing: border-box;
+	color:#f0f0f0;
+	font-size:12px;
+}
+
+
+
