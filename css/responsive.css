@@ -8,7 +8,7 @@
 		font-size: .8rem;
 	}
 
-	.slider-wrap{
+	.sl-wrap{
 		width:100%;
 	}
 
@@ -79,19 +79,19 @@
 		bottom:-160px;
 	}
 
-	.hamburger{
+	.hum{
 		top:0;
 		right:0;
 		background-color: transparent;
 	}
 
-	.hamburger.on{
+	.hum.on{
 		background-color: #fff;
 	}
 
-	.hamburger span,
-	.hamburger span:before,
-	.hamburger span:after{
+	.hum span,
+	.hum span:before,
+	.hum span:after{
 		background-color: #696969;
 	}
 

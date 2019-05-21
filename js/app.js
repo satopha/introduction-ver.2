@@ -2,7 +2,7 @@
 $(function(){
 
 	//ハンバーガーメニュー
-	$('.js-hamburger').on('click', function(){
+	$('.js-hum').on('click', function(){
  		$(this).toggleClass('on');
  	 	$('nav').fadeToggle(400);
  	});
@@ -15,7 +15,7 @@ $(function(){
 	}
 });
 
-	$('.slider-wrap').slick({
+	$('.sl-wrap').slick({
 		// dots: true,
 		// dotsClass: 'slide-dots',
 		autoplay: true,

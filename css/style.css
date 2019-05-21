@@ -58,7 +58,7 @@ body:after{
 
 /*/////////ハンバーガーメニュー//////////////////////////*/
 
-.hamburger{
+.hum{
 	width: 28px;
 	height: 24px;
 	position: fixed;
@@ -69,21 +69,21 @@ body:after{
 	z-index: 900;
 }
 
-.hamburger span{
+.hum span{
 	position: relative;
 	display: block;
 	top:9px;
 }
 
-.hamburger span:before,
-.hamburger span:after {
+.hum span:before,
+.hum span:after {
 	content: "";
 	position: absolute;
 }
 
-.hamburger span,
-.hamburger span:before,
-.hamburger span:after{
+.hum span,
+.hum span:before,
+.hum span:after{
 	width: 100%;
 	height: 4px;
 	background-color: #fff;
@@ -93,29 +93,29 @@ body:after{
 	transition: all .5s ease;
 }
 
-.hamburger span:before{
+.hum span:before{
 	top: -9px;
 }
 
-.hamburger span:after{
+.hum span:after{
 	top: 9px;
 }
 
 /*ハンバーガーアニメーション*/
 
-.hamburger.on span,.hamburger.on{
+.hum.on span,.hum.on{
 	background-color: transparent;/*背景色が透明になる*/
 }
 
-.hamburger.on span:before{
+.hum.on span:before{
 	transform: rotate(45deg) translate(6px,6px);
 }
 
-.hamburger.on span:after{
+.hum.on span:after{
 	transform: rotate(-45deg) translate(6px,-7px);
 }
 
-.hamburger:hover{
+.hum:hover{
 	opacity: .5;
 	transition: all .3s ease;
 }
@@ -299,7 +299,7 @@ nav ul li a:hover{
 	margin-bottom: 50px;
 }
 
-.slider-wrap{
+.sl-wrap{
 	position: relative;
     width: 70%;
     z-index: 1;
@@ -307,11 +307,11 @@ nav ul li a:hover{
     background-color: #696969;
 }
 
-.img-slide{
+.img-sl{
 	padding: 10px;
 }
 
-.img-slide img{
+.img-sl img{
 	display: block;
 	width: 100%;
 }
@@ -424,6 +424,104 @@ footer{
 	box-sizing: border-box;
 	color:#f0f0f0;
 	font-size:12px;
+}
+
+
+/*////////////////////////bootsnipp///////////////////////////////*/
+.social {
+    position: relative;
+    height: 3em;
+    width: 13.5em;
+    text-align: right;
+    margin: 40px 0 40px;
+}
+
+.social li {
+    display: block;
+    height: 4em;
+    line-height: 4em;
+    margin: -2.2em;
+    position: absolute;
+    -webkit-transition: -webkit-transform .7s;
+    -moz-transition: -moz-transform .7s;
+    -ms-transition: -ms-transform .7s;
+    -o-transition: -o-transform .7s;
+    transition: transform .7s;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    text-align: center;
+    width: 4em;
+
+}
+
+.social a {
+    color: #fffdf0;
+    display: block;
+    height: 4em;
+    line-height: 6em;
+    text-align: center;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    width: 4em; 
+  
+}
+
+.social li:hover {
+  -webkit-transform: scale(1.3,1.3) rotate(45deg);
+    -moz-transform: scale(1.3,1.3) rotate(45deg);
+  -ms-transform: scale(1.3,1.3) rotate(45deg);
+    -o-transform: scale(1.3,1.3) rotate(45deg);
+  transform: scale(1.3,1.3) rotate(45deg);
+}
+
+.facebook {
+    background: #155b9d;
+    left: 0;
+    top: 0%;
+}
+
+.twitter {
+    background: #1a9ec4;
+    bottom: 0;
+    left: 25%;
+}
+.facebook2 {
+    background: #155b9d;
+    left: 50%;
+    top: 0%;
+}
+
+.twitter2 {
+    background: #1a9ec4;
+    bottom: 0;
+    left: 25%;
+}
+
+.pinterest {
+    background: #e11a30;
+    left: 50%;
+    top: 0%;
+}
+.behance {
+    background: #3f7aa3;
+    bottom: 0;
+    left: 75%;
+}
+.behance2 {
+    background: #3f7aa3;
+    top: 0%;
+    left: 50%;
+}
+.behance3 {
+    background: #3f7aa3;
+    bottom: 0;
+    left: 75%;
 }
 
 
