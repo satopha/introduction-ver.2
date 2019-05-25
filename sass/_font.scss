@@ -1,35 +1,30 @@
-main h1, h3, a{
+
+%heading{
 	font-family: ta-hougan-k500, sans-serif;
 	font-weight: 400;
 	font-style: normal;
 }
 
-header p{
+%sub-heading{
 	font-family: vdl-gigag, sans-serif;
 	font-weight: 500;
 	font-style: normal;
 }
 
-main p{
+%font-main{
 	font-family: source-han-serif-japanese, serif;
 	font-weight: 400;
 	font-style: normal;
-	color: #696969;
 }
 
-main p span, h2{
+%font-main_bold{
 	font-family: source-han-serif-japanese, serif;
 	font-weight: 700;
 	font-style: normal;
-	color:#323232;
 }
 
-main h1, .backtop{
+%font-vertical-rl{
 	-webkit-writing-mode: vertical-rl;
     -ms-writing-mode: tb-rl;
     writing-mode: vertical-rl;
-}
-
-h3{
-	font-size: 30px;
 }

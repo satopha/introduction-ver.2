@@ -1,0 +1,267 @@
+@import "_mixin";
+@import "_font";
+@import "_display-fixed";
+
+.title{
+	@include flex($jc:center,$ai:center);
+	@extend %font-vertical-rl;
+	@extend %heading;
+	background-image: url('../img/top.png');
+	background-size: cover;
+	background-attachment: fixed;
+	top:0;
+	h1{
+		@include font($fs:50px,$fc:$bright);
+	}
+}
+
+.limit{
+	@include flex($jc:center,$ai:center);
+	@include font($fs:30px,$ta:center);
+	@extend %font-main_bold;
+	h2{
+		margin:0;
+	}
+	.yycountdown-box{
+		@include font($ta:center,$fc:$heading-font-color);
+		.yyc-day,.yyc-day-text,.yyc-hou,.yyc-hou-text,.yyc-min,.yyc-min-text,.yyc-sec,.yyc-sec-text{
+			@include font($fs:30px,$ta:center,$fc:$heading-font-color);
+			@extend %font-main_bold;
+		}
+	}
+	@include mediaq(s){
+		flex-direction: column;
+	}
+}
+.row{
+	@include flex($jc:center,$ai:center);
+	@include height-width($h:100vh);
+	.intro-about{
+		color:$main-font-color;
+		@extend %font-main;
+		span{
+			color:$heading-font-color;
+			@extend %font-main_bold;
+		}
+	}
+		@include mediaq(s){
+		flex-direction: column;
+		display: initial;
+		}
+	blockquote{
+		padding:0;
+		border:none;
+		 p{
+		 	color:$heading-font-color;
+			@extend %heading;
+			}
+	}
+}
+
+.goal{
+	@include flex($jc:space-between,$ai:center);
+	position:relative;
+
+	div{
+		@include mediaq(s){
+			width:90%;
+			margin:auto;
+			position: static;
+		}
+	}
+
+	h3{
+		@include height-width($h:30px,$w:82px);
+		@include absolute($at:20%,$ar:0);
+		@include border($bb-l:$border);
+		@extend %heading;
+		margin-right: 5%;
+		text-align: left;
+		@include mediaq(s){
+			top:25%;
+		}
+	}
+	.goal-about{
+		@include absolute($ar:5%);
+		@include flex($jc:center,$ai:center);
+		@include font($ta:right,$lh:24px);
+		@include height-width($w:45%,$h:30%);
+		@extend %font-main;
+		background-color:$bright;
+		box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+		@include mediaq(m){
+			@include font($fs:2rem,$ta:right);
+			@include height-width($w:75%,$h:26%);
+			padding:24px 20px;
+		}
+		@include mediaq(s){
+			position: static;
+			font-size:1.2rem;
+		}
+	}
+
+	.img{
+		@include height-width($h:50%,$w:70%);
+		background-image: url('../img/goal2.jpg');
+		background-size: cover;
+		@include mediaq(s){
+			display: none;
+		}
+	}
+
+	@include mediaq(s){
+		@include flex($ai:baseline,$fd:column);
+		background-image: url('../img/goal2.jpg');
+		background-size: cover;
+	}
+
+}
+
+.like{
+	@include flex($jc:center,$ai:center);
+
+	.like-wrap{
+		width:100%;
+
+		h3{
+			width:360px;
+			@extend %heading;
+			@include margin-padding($m:0 0 50px 5%);
+			@include mediaq(s){
+				border:none;
+				margin-bottom:16px;
+				width:95%;
+			}
+		}
+
+		.fl{
+			@include flex($jc:center,$ai:center);
+			.sl-wrap{
+				position: relative;
+				width: 70%;
+				z-index: 1;
+				opacity: 1;
+    			background-color: $main-color;
+    			@include mediaq(m){
+					width:100%;
+					}
+    			.img-sl img{
+    				display: block;
+					width: 100%;
+    			}
+			}
+			.slick-prev,.slick-next{
+				@include font($fs:20px);
+				background-color: transparent;
+				width:20px;
+
+			}
+			.slick-prev{
+				@include absolute($at:50%,$al:-30px);
+				border:none;
+				@include mediaq(m){
+					@include absolute($ab:-70%,$al:25px);
+						height:30px;
+					}
+				@include mediaq(s){
+					@include absolute($al:25%,$ab:-50px);
+					height:30px;
+				}
+			}
+			.slick-next{
+				@include absolute($at:50%,$ar:-30px);
+				border:none;
+				@include mediaq(m){
+					@include absolute($ab:-70%,$ar:25px);
+						height:30px;
+					}
+				@include mediaq(s){
+					@include absolute($ar:25%,$ab:-50px);
+					height:30px;
+				}
+			}
+		}
+	}
+}
+.contact{
+	@include flex($jc:space-around,$ai:center);
+	background-color: $main-color;
+	padding:20px 0;
+	@include mediaq(s){
+		flex-direction: column;
+
+	}
+
+	h3{
+		@include height-width($h:30px,$w:200px);
+		@extend %heading;
+		color:$bright;
+		@include border($bb-r:$border);
+		@include mediaq(s){
+			width:100%;
+			text-align: center;
+			border:none;
+			margin-bottom:20px;
+		}
+	}
+	form{
+		@include flex($fd:column);
+
+		button{
+			@include margin-padding($m:auto,$p:3px);
+			border:none;
+			background-color:$bright;
+			border-radius:3px;
+			color:$main-color;
+
+			&:hover{
+				@include hover;
+			}
+		}
+		input{
+			@include border($bb-t:$border,$bb-r:$border,$bb-b:$border,$bb-l:$border);
+			width:300px;
+			line-height: 30px;
+		}
+
+		textarea{
+			max-width: 300px;
+			min-width: 300px;
+			height:60px;
+			@include border($bb-t:$border,$bb-r:$border,$bb-b:$border,$bb-l:$border);
+			margin: 20px 0;
+		}
+	}
+}
+
+footer{
+	@include border($bb-t:$border-b);
+	@include font($fs:12px,$fc:$bright,$ta:center);
+	background-color: $main-color;
+	padding:12px 0 34px;
+	@include mediaq(s){
+		padding:16px 0;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

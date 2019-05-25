@@ -1,0 +1,126 @@
+$breakpoints:(
+s: "only screen and (max-width:480px)",
+m: "only screen and (max-width:960px)",
+l: "only screen and (max-width:1280px)",
+);
+
+@mixin mediaq($breakpoint){
+	@if map-has-key($breakpoints, $breakpoint){
+		@media #{map-get($breakpoints, $breakpoint)}{
+			@content;
+		}
+	}@else{
+		@error "$breakpointに#{$breakpoint}というキーはありません";
+	}
+}
+
+$heading-font-color:#323232;
+$main-font-color:#696969;
+$main-color:#696969;
+$sub-color:#323232;
+$bright:#f0f0f0;
+$transition:all .4s ease;
+//画面固定の線の設定色
+$border:2px solid $main-color;
+$border-b:2px solid $bright;
+
+%fixed-border{
+	content: "";
+	position:fixed;
+	display:block;
+	z-index:900;
+}
+
+%span-base{
+	background-color:$bright;
+	height:4px;
+	position: relative;
+	display: block;
+	border-radius:2px;
+	transition:all .5s ease;
+}
+
+%span-PseudoElement{
+	width: 100%;
+	content: "";
+	position: absolute;
+}
+
+@mixin display_border($dbw:auto,$dbh:auto,$dt:auto,$dr:auto,$db:auto,$dl:auto,$db-t:none,$db-r:none,$db-b:none,$db-l:none){
+	//画面に固定する枠の指定
+	width:$dbw;
+	height:$dbh;
+	top:$dt;
+	right:$dr;
+	bottom:$db;
+	left:$dl;
+	border:{
+		top:$db-t;
+		right:$db-r;
+		bottom:$db-b;
+		left:$db-l;
+	}
+}
+
+@mixin height-width($h:auto,$w:auto){
+	//高さと幅指定
+	height:$h;
+	width:$w;
+}
+
+@mixin margin-padding($m:auto,$p:auto){
+	//余白指定
+	margin:$m;
+	padding:$p;
+}
+
+@mixin fixed($ft:auto,$fr:auto,$fb:auto,$fl:auto){
+	//fixe利用時
+	position:fixed;
+	top:$ft;
+	right:$fr;
+	bottom:$fb;
+	left:$fl;
+}
+
+@mixin absolute($at:auto,$ar:auto,$ab:auto,$al:auto){
+	//absolute利用時
+	position:absolute;
+	top:$at;
+	right:$ar;
+	bottom:$ab;
+	left:$al;
+}
+
+@mixin flex($jc:normal,$ai:normal,$fd:inherit){
+	//flex利用時
+	display: flex;
+	justify-content:$jc;
+	align-items:$ai;
+	flex-direction:$fd;
+}
+
+@mixin border($bb-t:none,$bb-r:none,$bb-b:none,$bb-l:none,$bb-s:border-box){
+	//線幅と位置指定
+	border: {
+		top:$bb-t;
+		right:$bb-r;
+		bottom:$bb-b;
+		left:$bb-l;
+	}
+	box-sizing:$bb-s;
+}
+
+@mixin font($fs:medium,$fw:normal,$ta:left,$lh:normal,$fc:$main-font-color){
+	//フォント装飾あたりの指定
+	font-size:$fs;
+	font-weight:$fw;
+	text-align:$ta;
+	line-height:$lh;
+	color:$fc;
+}
+
+@mixin hover($par:.5,$tra:$transition){
+	opacity:$par;
+	transition:$tra;
+}

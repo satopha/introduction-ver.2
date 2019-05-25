@@ -1,0 +1,161 @@
+@import "_mixin";
+@import "_font";
+
+html{
+	display: none;
+
+		&:before{
+			@extend %fixed-border;
+			//画面上の線
+			@include display_border($dbw:100vw,$dt:3%,$dr:0,$db-t:$border);
+			@include mediaq(s){
+				display: none;
+			}
+		}
+
+		&:after{
+			@extend %fixed-border;
+			//画面右の線
+			@include display_border($dbh:100vh,$dt:0,$dr:3%,$db-r:$border);
+			@include mediaq(s){
+				display: none;
+			}
+		}
+
+	body{
+		background-color:$bright;
+
+		.display{
+			@include height-width($h:100vh,$w:100vw);
+				&:before{
+					@extend %fixed-border;
+					//画面下の線
+					@include display_border($dbw:100vw,$dl:0,$db:3%,$db-b:$border);
+					@include mediaq(s){
+						display: none;
+					}
+				}
+				&:after{
+					@extend %fixed-border;
+					//画面左の線
+					@include display_border($dbh:100vh,$dt:0,$dl:3%,$db-l:$border);
+					@include mediaq(s){
+						display: none;
+					}
+				}
+		}
+
+		.hum{
+			@include height-width($h:34px,$w:36px);
+			@include fixed($ft:3%,$fr:3%);
+			background-color:$main-color;
+			display: block;
+			padding:6px;
+			z-index: 900;
+			&:hover{
+					@include hover;
+			}
+
+			span{
+				top:9px;
+				@extend %span-base;
+
+				&:before{
+					top:-9px;
+					@extend %span-base;
+					@extend %span-PseudoElement;
+				}
+
+				&:after{
+					top:9px;
+					@extend %span-base;
+					@extend %span-PseudoElement;
+				}
+			}
+
+			//クリックした時にアイコンがバツマークにかわる
+			.on{
+				background-color: transparent;/*背景色が透明になる*/
+				span{
+					background-color: transparent;
+					@include mediaq(s){
+							background-color:$main-color;
+						}
+
+					&:before{
+						transform: rotate(45deg) translate(6px,6px);
+						@include mediaq(s){
+							background-color:$main-color;
+						}
+					}
+
+					&:after{
+						transform: rotate(-45deg) translate(6px,-7px);
+						@include mediaq(s){
+							background-color:$main-color;
+						}
+					}
+				}
+				@include mediaq(s){
+					background-color:$bright;
+				}
+			}
+			@include mediaq(s){
+					@include absolute($at:0,$ar:0);
+					background-color:transparent;
+				}
+		}
+
+		nav{
+			@include fixed($ft:3%);
+			width:100vw;
+			display: none;
+			background-color: rgba(100,100,100,.8);
+			z-index: 200;
+			padding:0 3%;
+
+			ul{
+				@include flex($jc:space-around,$ai:center);
+				@include height-width($h:10vh,$w:100%);
+
+				li a{
+					@extend %heading;
+					@include font($fs:20px,$fc:$bright);
+
+					&:hover{
+						@include hover;
+						@include font($fs:20px,$fc:$sub-color);
+					}
+					@include mediaq(m){
+						font-size: .8rem;
+					}
+				}
+				@include mediaq(s){
+					flex-direction: column;
+					height:100%;
+				}
+			}
+
+			@include mediaq(s){
+				top:0;
+				height:40%;
+			}
+		}
+
+		.backtop{
+			@include fixed($ft:50%,$fl:4%);
+			@include font($fc:$sub-color);
+			@extend %font-vertical-rl;
+			cursor: pointer;
+
+			&:hover{
+				@include hover;
+			}
+
+			@include mediaq(s){
+				display: none;
+			}
+		}
+	}
+}
+
