@@ -64,12 +64,22 @@ html{
 					top:-9px;
 					@extend %span-base;
 					@extend %span-PseudoElement;
+					@include mediaq(s){
+						background-color:$main-color;
+					}
 				}
 
 				&:after{
 					top:9px;
 					@extend %span-base;
 					@extend %span-PseudoElement;
+					@include mediaq(s){
+						background-color:$main-color;
+					}
+				}
+
+				@include mediaq(s){
+					background-color:$main-color;
 				}
 			}
 
@@ -101,7 +111,7 @@ html{
 				}
 			}
 			@include mediaq(s){
-					@include absolute($at:0,$ar:0);
+					@include absolute($at:3%,$ar:8%);
 					background-color:transparent;
 				}
 		}
@@ -117,6 +127,7 @@ html{
 			ul{
 				@include flex($jc:space-around,$ai:center);
 				@include height-width($h:10vh,$w:100%);
+				margin:0;
 
 				li a{
 					@extend %heading;
@@ -125,9 +136,6 @@ html{
 					&:hover{
 						@include hover;
 						@include font($fs:20px,$fc:$sub-color);
-					}
-					@include mediaq(m){
-						font-size: .8rem;
 					}
 				}
 				@include mediaq(s){
@@ -147,6 +155,7 @@ html{
 			@include font($fc:$sub-color);
 			@extend %font-vertical-rl;
 			cursor: pointer;
+			z-index:999;
 
 			&:hover{
 				@include hover;

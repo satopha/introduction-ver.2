@@ -12,6 +12,16 @@
 	top:0;
 	h1{
 		@include font($fs:50px,$fc:$bright);
+		@include mediaq(s){
+			@include height-width($h:80vh,$w:80vw);
+			@include flex($jc:center,$ai:center);
+			background-image: url('../img/top.png');
+			background-size: cover;
+
+		}
+	}
+	@include mediaq(s){
+		background-image:none;
 	}
 }
 
@@ -23,9 +33,9 @@
 		margin:0;
 	}
 	.yycountdown-box{
-		@include font($ta:center,$fc:$heading-font-color);
+		@include font($ta:center,$fc:$main-font-color);
 		.yyc-day,.yyc-day-text,.yyc-hou,.yyc-hou-text,.yyc-min,.yyc-min-text,.yyc-sec,.yyc-sec-text{
-			@include font($fs:30px,$ta:center,$fc:$heading-font-color);
+			@include font($fs:30px,$ta:center,$fc:$main-font-color);
 			@extend %font-main_bold;
 		}
 	}
@@ -36,6 +46,9 @@
 .row{
 	@include flex($jc:center,$ai:center);
 	@include height-width($h:100vh);
+	@include mediaq(s){
+			text-align: center;
+		}
 	.intro-about{
 		color:$main-font-color;
 		@extend %font-main;
@@ -49,7 +62,7 @@
 		display: initial;
 		}
 	blockquote{
-		padding:0;
+		@include margin-padding($m:20px 0,$p:0);
 		border:none;
 		 p{
 		 	color:$heading-font-color;
@@ -73,12 +86,15 @@
 	h3{
 		@include height-width($h:30px,$w:82px);
 		@include absolute($at:20%,$ar:0);
-		@include border($bb-l:$border);
 		@extend %heading;
 		margin-right: 5%;
 		text-align: left;
 		@include mediaq(s){
-			top:25%;
+			@include margin-padding($m:0,$p:12px);
+			@include height-width($h:40px,$w:100vw);
+			@include font($ta:center,$fc:$bright);
+			background-color: #323232;
+			position:static;
 		}
 	}
 	.goal-about{
@@ -96,7 +112,11 @@
 		}
 		@include mediaq(s){
 			position: static;
-			font-size:1.2rem;
+			@include margin-padding($m:0,$p:0);
+			@include font($fs:1.4rem,$ta:center,$fc:#f0f0f0);
+			@include height-width($h:24%,$w:100vw);
+			background-color: #323232;
+			box-shadow:none;
 		}
 	}
 
@@ -105,14 +125,13 @@
 		background-image: url('../img/goal2.jpg');
 		background-size: cover;
 		@include mediaq(s){
-			display: none;
+			@include height-width($h:300px,$w:100vw);
+			margin: 0;
 		}
 	}
-
+	
 	@include mediaq(s){
-		@include flex($ai:baseline,$fd:column);
-		background-image: url('../img/goal2.jpg');
-		background-size: cover;
+		@include flex($jc:center,$fd:column,$ai:center);
 	}
 
 }
@@ -183,6 +202,7 @@
 		}
 	}
 }
+
 .contact{
 	@include flex($jc:space-around,$ai:center);
 	background-color: $main-color;

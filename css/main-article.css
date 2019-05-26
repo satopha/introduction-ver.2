@@ -207,8 +207,26 @@ html body .hum span:before {
   top: -9px;
 }
 
+@media only screen and (max-width: 480px) {
+  html body .hum span:before {
+    background-color: #696969;
+  }
+}
+
 html body .hum span:after {
   top: 9px;
+}
+
+@media only screen and (max-width: 480px) {
+  html body .hum span:after {
+    background-color: #696969;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  html body .hum span {
+    background-color: #696969;
+  }
 }
 
 html body .hum .on {
@@ -255,8 +273,8 @@ html body .hum .on span:after {
 @media only screen and (max-width: 480px) {
   html body .hum {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 3%;
+    right: 8%;
     bottom: auto;
     left: auto;
     background-color: transparent;
@@ -283,6 +301,7 @@ html body nav ul {
   flex-direction: inherit;
   height: 10vh;
   width: 100%;
+  margin: 0;
 }
 
 html body nav ul li a {
@@ -301,12 +320,6 @@ html body nav ul li a:hover {
   text-align: left;
   line-height: normal;
   color: #323232;
-}
-
-@media only screen and (max-width: 960px) {
-  html body nav ul li a {
-    font-size: .8rem;
-  }
 }
 
 @media only screen and (max-width: 480px) {
@@ -335,6 +348,7 @@ html body .backtop {
   line-height: normal;
   color: #323232;
   cursor: pointer;
+  z-index: 999;
 }
 
 html body .backtop:hover {
@@ -367,6 +381,25 @@ html body .backtop:hover {
   color: #f0f0f0;
 }
 
+@media only screen and (max-width: 480px) {
+  .title h1 {
+    height: 80vh;
+    width: 80vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: inherit;
+    background-image: url("../img/top.png");
+    background-size: cover;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .title {
+    background-image: none;
+  }
+}
+
 .limit {
   display: flex;
   justify-content: center;
@@ -388,7 +421,7 @@ html body .backtop:hover {
   font-weight: normal;
   text-align: center;
   line-height: normal;
-  color: #323232;
+  color: #696969;
 }
 
 .limit .yycountdown-box .yyc-day, .limit .yycountdown-box .yyc-day-text, .limit .yycountdown-box .yyc-hou, .limit .yycountdown-box .yyc-hou-text, .limit .yycountdown-box .yyc-min, .limit .yycountdown-box .yyc-min-text, .limit .yycountdown-box .yyc-sec, .limit .yycountdown-box .yyc-sec-text {
@@ -396,7 +429,7 @@ html body .backtop:hover {
   font-weight: normal;
   text-align: center;
   line-height: normal;
-  color: #323232;
+  color: #696969;
 }
 
 @media only screen and (max-width: 480px) {
@@ -412,6 +445,12 @@ html body .backtop:hover {
   flex-direction: inherit;
   height: 100vh;
   width: auto;
+}
+
+@media only screen and (max-width: 480px) {
+  .row {
+    text-align: center;
+  }
 }
 
 .row .intro-about {
@@ -430,6 +469,7 @@ html body .backtop:hover {
 }
 
 .row blockquote {
+  margin: 20px 0;
   padding: 0;
   border: none;
 }
@@ -462,18 +502,23 @@ html body .backtop:hover {
   right: 0;
   bottom: auto;
   left: auto;
-  border-top: none;
-  border-right: none;
-  border-bottom: none;
-  border-left: 2px solid #696969;
-  box-sizing: border-box;
   margin-right: 5%;
   text-align: left;
 }
 
 @media only screen and (max-width: 480px) {
   .goal h3 {
-    top: 25%;
+    margin: 0;
+    padding: 12px;
+    height: 40px;
+    width: 100vw;
+    font-size: medium;
+    font-weight: normal;
+    text-align: center;
+    line-height: normal;
+    color: #f0f0f0;
+    background-color: #323232;
+    position: static;
   }
 }
 
@@ -514,7 +559,17 @@ html body .backtop:hover {
 @media only screen and (max-width: 480px) {
   .goal .goal-about {
     position: static;
-    font-size: 1.2rem;
+    margin: 0;
+    padding: 0;
+    font-size: 1.4rem;
+    font-weight: normal;
+    text-align: center;
+    line-height: normal;
+    color: #f0f0f0;
+    height: 24%;
+    width: 100vw;
+    background-color: #323232;
+    box-shadow: none;
   }
 }
 
@@ -527,18 +582,18 @@ html body .backtop:hover {
 
 @media only screen and (max-width: 480px) {
   .goal .img {
-    display: none;
+    height: 300px;
+    width: 100vw;
+    margin: 0;
   }
 }
 
 @media only screen and (max-width: 480px) {
   .goal {
     display: flex;
-    justify-content: normal;
-    align-items: baseline;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
-    background-image: url("../img/goal2.jpg");
-    background-size: cover;
   }
 }
 
