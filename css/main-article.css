@@ -229,49 +229,49 @@ html body .hum span:after {
   }
 }
 
-html body .hum .on {
+html body .hum.on {
   background-color: transparent;
   /*背景色が透明になる*/
 }
 
-html body .hum .on span {
+html body .hum.on span {
   background-color: transparent;
 }
 
 @media only screen and (max-width: 480px) {
-  html body .hum .on span {
+  html body .hum.on span {
     background-color: #696969;
   }
 }
 
-html body .hum .on span:before {
+html body .hum.on span:before {
   transform: rotate(45deg) translate(6px, 6px);
 }
 
 @media only screen and (max-width: 480px) {
-  html body .hum .on span:before {
+  html body .hum.on span:before {
     background-color: #696969;
   }
 }
 
-html body .hum .on span:after {
+html body .hum.on span:after {
   transform: rotate(-45deg) translate(6px, -7px);
 }
 
 @media only screen and (max-width: 480px) {
-  html body .hum .on span:after {
+  html body .hum.on span:after {
     background-color: #696969;
   }
 }
 
 @media only screen and (max-width: 480px) {
-  html body .hum .on {
+  html body .hum.on {
     background-color: #f0f0f0;
   }
 }
 
 @media only screen and (max-width: 480px) {
-  html body .hum {
+  html body {
     position: absolute;
     top: 3%;
     right: 8%;
@@ -338,15 +338,18 @@ html body nav ul li a:hover {
 
 html body .backtop {
   position: fixed;
-  top: 50%;
+  top: 45%;
   right: auto;
   bottom: auto;
-  left: 4%;
+  left: 2%;
   font-size: medium;
   font-weight: normal;
   text-align: left;
   line-height: normal;
-  color: #323232;
+  color: #f0f0f0;
+  margin: 0;
+  padding: 15px 5px;
+  background-color: #696969;
   cursor: pointer;
   z-index: 999;
 }
@@ -367,10 +370,6 @@ html body .backtop:hover {
   justify-content: center;
   align-items: center;
   flex-direction: inherit;
-  background-image: url("../img/top.png");
-  background-size: cover;
-  background-attachment: fixed;
-  top: 0;
 }
 
 .title h1 {
@@ -379,19 +378,15 @@ html body .backtop:hover {
   text-align: left;
   line-height: normal;
   color: #f0f0f0;
-}
-
-@media only screen and (max-width: 480px) {
-  .title h1 {
-    height: 80vh;
-    width: 80vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: inherit;
-    background-image: url("../img/top.png");
-    background-size: cover;
-  }
+  height: 80vh;
+  width: 80vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: inherit;
+  background-image: url("../img/top.png");
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 @media only screen and (max-width: 480px) {
@@ -434,7 +429,7 @@ html body .backtop:hover {
 
 @media only screen and (max-width: 960px) {
   .limit .yycountdown-box .yyc-day, .limit .yycountdown-box .yyc-day-text, .limit .yycountdown-box .yyc-hou, .limit .yycountdown-box .yyc-hou-text, .limit .yycountdown-box .yyc-min, .limit .yycountdown-box .yyc-min-text, .limit .yycountdown-box .yyc-sec, .limit .yycountdown-box .yyc-sec-text {
-    font-size: 2em;
+    font-size: 1.8em;
   }
 }
 
@@ -446,7 +441,7 @@ html body .backtop:hover {
 
 @media only screen and (max-width: 960px) {
   .limit h2 {
-    font-size: .6em;
+    font-size: .5em;
   }
 }
 
@@ -496,7 +491,12 @@ html body .backtop:hover {
 }
 
 .row blockquote p {
+  font-size: 30px;
+  font-weight: normal;
+  text-align: center;
+  line-height: normal;
   color: #323232;
+  font-size: 30px;
 }
 
 .goal {
@@ -519,11 +519,15 @@ html body .backtop:hover {
   height: 30px;
   width: 82px;
   position: absolute;
-  top: 20%;
-  right: 0;
+  top: 22%;
+  right: 3%;
   bottom: auto;
   left: auto;
+  font-size: 30px;
+  font-weight: normal;
   text-align: left;
+  line-height: normal;
+  color: #696969;
 }
 
 @media only screen and (max-width: 480px) {
@@ -532,7 +536,7 @@ html body .backtop:hover {
     padding: 12px;
     height: 40px;
     width: 100vw;
-    font-size: medium;
+    font-size: 30px;
     font-weight: normal;
     text-align: center;
     line-height: normal;
@@ -565,7 +569,7 @@ html body .backtop:hover {
 
 @media only screen and (max-width: 960px) {
   .goal .goal-about {
-    font-size: 2rem;
+    font-size: 1.6rem;
     font-weight: normal;
     text-align: right;
     line-height: normal;
@@ -594,7 +598,7 @@ html body .backtop:hover {
 }
 
 .goal .img {
-  height: 50%;
+  height: 60%;
   width: 70%;
   background-image: url("../img/goal2.jpg");
   background-size: cover;
@@ -625,12 +629,13 @@ html body .backtop:hover {
 }
 
 .like .like-wrap {
-  width: 80vw;
+  width: 70vw;
 }
 
 .like .like-wrap h3 {
   width: 360px;
-  margin: 0 0 50px 5%;
+  font-size: 30px;
+  margin: 0 0 50px;
   padding: auto;
 }
 
@@ -651,7 +656,7 @@ html body .backtop:hover {
 
 .like .like-wrap .fl .sl-wrap {
   position: relative;
-  width: 80vw;
+  width: 70vw;
   z-index: 1;
   opacity: 1;
   background-color: #696969;
@@ -735,8 +740,9 @@ html body .backtop:hover {
   justify-content: space-around;
   align-items: center;
   flex-direction: inherit;
-  background-color: #696969;
+  margin: 50px 0 0 0;
   padding: 20px 0;
+  background-color: #323232;
 }
 
 @media only screen and (max-width: 480px) {
@@ -748,6 +754,7 @@ html body .backtop:hover {
 .contact h3 {
   height: 30px;
   width: 200px;
+  font-size: 30px;
   color: #f0f0f0;
   border-top: none;
   border-right: 2px solid #696969;

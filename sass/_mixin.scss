@@ -22,6 +22,7 @@ $bright:#f0f0f0;
 $transition:all .4s ease;
 //画面固定の線の設定色
 $border:2px solid $main-color;
+//背景黒の時はこっち
 $border-b:2px solid $bright;
 
 %fixed-border{

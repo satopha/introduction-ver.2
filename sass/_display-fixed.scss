@@ -52,9 +52,12 @@ html{
 			display: block;
 			padding:6px;
 			z-index: 900;
-			&:hover{
-					@include hover;
-			}
+				&:hover{
+						@include hover;
+				}
+
+			//クリックした時にアイコンがバツマークにかわる
+			
 
 			span{
 				top:9px;
@@ -82,9 +85,8 @@ html{
 					background-color:$main-color;
 				}
 			}
-
-			//クリックした時にアイコンがバツマークにかわる
-			.on{
+		}
+		.hum.on{
 				background-color: transparent;/*背景色が透明になる*/
 				span{
 					background-color: transparent;
@@ -114,7 +116,6 @@ html{
 					@include absolute($at:3%,$ar:8%);
 					background-color:transparent;
 				}
-		}
 
 		nav{
 			@include fixed($ft:3%);
@@ -130,7 +131,7 @@ html{
 				margin:0;
 
 				li a{
-					@extend %heading;
+					@extend %font-family-heading;
 					@include font($fs:20px,$fc:$bright);
 
 					&:hover{
@@ -151,9 +152,11 @@ html{
 		}
 
 		.backtop{
-			@include fixed($ft:50%,$fl:4%);
-			@include font($fc:$sub-color);
+			@include fixed($ft:45%,$fl:2%);
+			@include font($fc:$bright);
+			@include margin-padding($m:0,$p:15px 5px);
 			@extend %font-vertical-rl;
+			background-color:$main-color;
 			cursor: pointer;
 			z-index:999;
 
