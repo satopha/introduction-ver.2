@@ -27,7 +27,7 @@ html body nav ul li a, .title, .row blockquote p, .goal h3, .like .like-wrap h3,
   font-style: normal;
 }
 
-.row .intro-about, .goal .goal-about {
+.row .intro-about, .goal .goal-about p, footer p {
   font-family: source-han-serif-japanese, serif;
   font-weight: 400;
   font-style: normal;
@@ -73,7 +73,7 @@ html body nav ul li a, .title, .row blockquote p, .goal h3, .like .like-wrap h3,
   font-style: normal;
 }
 
-.row .intro-about, .goal .goal-about {
+.row .intro-about, .goal .goal-about p, footer p {
   font-family: source-han-serif-japanese, serif;
   font-weight: 400;
   font-style: normal;
@@ -432,9 +432,30 @@ html body .backtop:hover {
   color: #696969;
 }
 
+@media only screen and (max-width: 960px) {
+  .limit .yycountdown-box .yyc-day, .limit .yycountdown-box .yyc-day-text, .limit .yycountdown-box .yyc-hou, .limit .yycountdown-box .yyc-hou-text, .limit .yycountdown-box .yyc-min, .limit .yycountdown-box .yyc-min-text, .limit .yycountdown-box .yyc-sec, .limit .yycountdown-box .yyc-sec-text {
+    font-size: 2em;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .limit .yycountdown-box .yyc-day, .limit .yycountdown-box .yyc-day-text, .limit .yycountdown-box .yyc-hou, .limit .yycountdown-box .yyc-hou-text, .limit .yycountdown-box .yyc-min, .limit .yycountdown-box .yyc-min-text, .limit .yycountdown-box .yyc-sec, .limit .yycountdown-box .yyc-sec-text {
+    font-size: 1.5em;
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  .limit h2 {
+    font-size: .6em;
+  }
+}
+
 @media only screen and (max-width: 480px) {
   .limit {
     flex-direction: column;
+  }
+  .limit h2 {
+    font-size: .3em;
   }
 }
 
@@ -502,7 +523,6 @@ html body .backtop:hover {
   right: 0;
   bottom: auto;
   left: auto;
-  margin-right: 5%;
   text-align: left;
 }
 
@@ -605,7 +625,7 @@ html body .backtop:hover {
 }
 
 .like .like-wrap {
-  width: 100%;
+  width: 80vw;
 }
 
 .like .like-wrap h3 {
@@ -631,7 +651,7 @@ html body .backtop:hover {
 
 .like .like-wrap .fl .sl-wrap {
   position: relative;
-  width: 70%;
+  width: 80vw;
   z-index: 1;
   opacity: 1;
   background-color: #696969;
@@ -669,11 +689,6 @@ html body .backtop:hover {
 
 @media only screen and (max-width: 960px) {
   .like .like-wrap .fl .slick-prev {
-    position: absolute;
-    top: auto;
-    right: auto;
-    bottom: -70%;
-    left: 25px;
     height: 30px;
   }
 }
@@ -700,11 +715,6 @@ html body .backtop:hover {
 
 @media only screen and (max-width: 960px) {
   .like .like-wrap .fl .slick-next {
-    position: absolute;
-    top: auto;
-    right: 25px;
-    bottom: -70%;
-    left: auto;
     height: 30px;
   }
 }
@@ -786,6 +796,13 @@ html body .backtop:hover {
   line-height: 30px;
 }
 
+@media only screen and (max-width: 480px) {
+  .contact form input {
+    width: 200px;
+    margin: auto;
+  }
+}
+
 .contact form textarea {
   max-width: 300px;
   min-width: 300px;
@@ -798,19 +815,30 @@ html body .backtop:hover {
   margin: 20px 0;
 }
 
+@media only screen and (max-width: 480px) {
+  .contact form textarea {
+    max-width: 200px;
+    min-width: 200px;
+    margin: auto;
+  }
+}
+
 footer {
   border-top: 2px solid #f0f0f0;
   border-right: none;
   border-bottom: none;
   border-left: none;
   box-sizing: border-box;
+  background-color: #696969;
+  padding: 16px 0;
+}
+
+footer p {
   font-size: 12px;
   font-weight: normal;
   text-align: center;
   line-height: normal;
   color: #f0f0f0;
-  background-color: #696969;
-  padding: 12px 0 34px;
 }
 
 @media only screen and (max-width: 480px) {

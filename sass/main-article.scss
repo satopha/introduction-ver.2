@@ -37,10 +37,24 @@
 		.yyc-day,.yyc-day-text,.yyc-hou,.yyc-hou-text,.yyc-min,.yyc-min-text,.yyc-sec,.yyc-sec-text{
 			@include font($fs:30px,$ta:center,$fc:$main-font-color);
 			@extend %font-main_bold;
+			@include mediaq(m){
+				font-size: 2em;
+			}
+				@include mediaq(s){
+					font-size: 1.5em;
+				}
 		}
 	}
+	@include mediaq(m){
+		h2{
+				font-size: .6em;
+				}
+			}
 	@include mediaq(s){
 		flex-direction: column;
+		h2{
+			font-size: .3em;
+		}
 	}
 }
 .row{
@@ -67,7 +81,7 @@
 		 p{
 		 	color:$heading-font-color;
 			@extend %heading;
-			}
+		}
 	}
 }
 
@@ -87,7 +101,6 @@
 		@include height-width($h:30px,$w:82px);
 		@include absolute($at:20%,$ar:0);
 		@extend %heading;
-		margin-right: 5%;
 		text-align: left;
 		@include mediaq(s){
 			@include margin-padding($m:0,$p:12px);
@@ -102,7 +115,9 @@
 		@include flex($jc:center,$ai:center);
 		@include font($ta:right,$lh:24px);
 		@include height-width($w:45%,$h:30%);
-		@extend %font-main;
+			p{
+				@extend %font-main;
+			}
 		background-color:$bright;
 		box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
 		@include mediaq(m){
@@ -140,7 +155,7 @@
 	@include flex($jc:center,$ai:center);
 
 	.like-wrap{
-		width:100%;
+		width: 80vw;
 
 		h3{
 			width:360px;
@@ -157,7 +172,7 @@
 			@include flex($jc:center,$ai:center);
 			.sl-wrap{
 				position: relative;
-				width: 70%;
+				width: 80vw;
 				z-index: 1;
 				opacity: 1;
     			background-color: $main-color;
@@ -179,7 +194,6 @@
 				@include absolute($at:50%,$al:-30px);
 				border:none;
 				@include mediaq(m){
-					@include absolute($ab:-70%,$al:25px);
 						height:30px;
 					}
 				@include mediaq(s){
@@ -191,7 +205,6 @@
 				@include absolute($at:50%,$ar:-30px);
 				border:none;
 				@include mediaq(m){
-					@include absolute($ab:-70%,$ar:25px);
 						height:30px;
 					}
 				@include mediaq(s){
@@ -242,6 +255,10 @@
 			@include border($bb-t:$border,$bb-r:$border,$bb-b:$border,$bb-l:$border);
 			width:300px;
 			line-height: 30px;
+				@include mediaq(s){
+			    width:200px;
+    			margin:auto;
+			}
 		}
 
 		textarea{
@@ -250,15 +267,23 @@
 			height:60px;
 			@include border($bb-t:$border,$bb-r:$border,$bb-b:$border,$bb-l:$border);
 			margin: 20px 0;
+			@include mediaq(s){
+			    max-width: 200px;
+    			min-width: 200px;
+    			margin:auto;
+			}
 		}
 	}
 }
 
 footer{
 	@include border($bb-t:$border-b);
-	@include font($fs:12px,$fc:$bright,$ta:center);
 	background-color: $main-color;
-	padding:12px 0 34px;
+	padding:16px 0;
+		p{
+		@include font($fs:12px,$fc:$bright,$ta:center);
+		@extend %font-main;
+		}
 	@include mediaq(s){
 		padding:16px 0;
 	}
