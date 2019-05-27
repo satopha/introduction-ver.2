@@ -84,9 +84,13 @@
 		@include margin-padding($m:20px 0,$p:0);
 		border:none;
 			 p{	
-			 	@include font($ta:center,$fs:30px,$fc:$heading-font-color);
+			 	@include font($ta:left,$fs:30px,$fc:$heading-font-color);
 			 	font-size:30px;
 				@extend %font-family-heading;
+
+				@include mediaq(s){
+					@include font($ta:center,$fs:30px,$fc:$heading-font-color);
+				}
 			}
 	}
 }

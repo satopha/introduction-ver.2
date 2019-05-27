@@ -229,6 +229,17 @@ html body .hum span:after {
   }
 }
 
+@media only screen and (max-width: 480px) {
+  html body .hum {
+    position: absolute;
+    top: 3%;
+    right: 8%;
+    bottom: auto;
+    left: auto;
+    background-color: transparent;
+  }
+}
+
 html body .hum.on {
   background-color: transparent;
   /*背景色が透明になる*/
@@ -238,20 +249,8 @@ html body .hum.on span {
   background-color: transparent;
 }
 
-@media only screen and (max-width: 480px) {
-  html body .hum.on span {
-    background-color: #696969;
-  }
-}
-
 html body .hum.on span:before {
   transform: rotate(45deg) translate(6px, 6px);
-}
-
-@media only screen and (max-width: 480px) {
-  html body .hum.on span:before {
-    background-color: #696969;
-  }
 }
 
 html body .hum.on span:after {
@@ -259,25 +258,8 @@ html body .hum.on span:after {
 }
 
 @media only screen and (max-width: 480px) {
-  html body .hum.on span:after {
-    background-color: #696969;
-  }
-}
-
-@media only screen and (max-width: 480px) {
   html body .hum.on {
     background-color: #f0f0f0;
-  }
-}
-
-@media only screen and (max-width: 480px) {
-  html body {
-    position: absolute;
-    top: 3%;
-    right: 8%;
-    bottom: auto;
-    left: auto;
-    background-color: transparent;
   }
 }
 
@@ -341,7 +323,7 @@ html body .backtop {
   top: 45%;
   right: auto;
   bottom: auto;
-  left: 2%;
+  left: 3%;
   font-size: medium;
   font-weight: normal;
   text-align: left;
@@ -493,10 +475,20 @@ html body .backtop:hover {
 .row blockquote p {
   font-size: 30px;
   font-weight: normal;
-  text-align: center;
+  text-align: left;
   line-height: normal;
   color: #323232;
   font-size: 30px;
+}
+
+@media only screen and (max-width: 480px) {
+  .row blockquote p {
+    font-size: 30px;
+    font-weight: normal;
+    text-align: center;
+    line-height: normal;
+    color: #323232;
+  }
 }
 
 .goal {

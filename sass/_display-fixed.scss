@@ -55,10 +55,6 @@ html{
 				&:hover{
 						@include hover;
 				}
-
-			//クリックした時にアイコンがバツマークにかわる
-			
-
 			span{
 				top:9px;
 				@extend %span-base;
@@ -85,37 +81,28 @@ html{
 					background-color:$main-color;
 				}
 			}
+				@include mediaq(s){
+					@include absolute($at:3%,$ar:8%);
+					background-color:transparent;
+				}
 		}
+		//クリックした時にアイコンがバツマークにかわる
 		.hum.on{
 				background-color: transparent;/*背景色が透明になる*/
 				span{
 					background-color: transparent;
-					@include mediaq(s){
-							background-color:$main-color;
-						}
-
 					&:before{
 						transform: rotate(45deg) translate(6px,6px);
-						@include mediaq(s){
-							background-color:$main-color;
-						}
 					}
 
 					&:after{
 						transform: rotate(-45deg) translate(6px,-7px);
-						@include mediaq(s){
-							background-color:$main-color;
-						}
 					}
 				}
 				@include mediaq(s){
 					background-color:$bright;
 				}
 			}
-			@include mediaq(s){
-					@include absolute($at:3%,$ar:8%);
-					background-color:transparent;
-				}
 
 		nav{
 			@include fixed($ft:3%);
@@ -152,7 +139,7 @@ html{
 		}
 
 		.backtop{
-			@include fixed($ft:45%,$fl:2%);
+			@include fixed($ft:45%,$fl:3%);
 			@include font($fc:$bright);
 			@include margin-padding($m:0,$p:15px 5px);
 			@extend %font-vertical-rl;
