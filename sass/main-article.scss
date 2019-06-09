@@ -2,6 +2,17 @@
 @import "_font";
 @import "_display-fixed";
 
+//ノイズ
+.noise {
+	background-image: url(../img/noise.png);
+	animation: noise_anima 1s steps(10) infinite;
+}
+
+@keyframes noise_anima {
+	from { background-position: 0 0; }
+	to { background-position: 123px 456px; }
+}
+
 //タイトル部分
 .title{
 	@include flex($jc:center,$ai:center);
@@ -25,16 +36,17 @@
 
 //時間制限
 .limit{
+	background-color:$sub-color;
 	@include flex($jc:center,$ai:center);
-	@include font($fs:30px,$ta:center);
+	@include font($fs:30px,$ta:center,$fc:$bright);
 	@extend %font-main_bold;
 		h2{
 			margin:0;
 		}
 	.yycountdown-box{
-		@include font($ta:center,$fc:$main-font-color);
+		@include font($ta:center,$fc:$bright);
 			.yyc-day,.yyc-day-text,.yyc-hou,.yyc-hou-text,.yyc-min,.yyc-min-text,.yyc-sec,.yyc-sec-text{
-				@include font($fs:30px,$ta:center,$fc:$main-font-color);
+				@include font($fs:30px,$ta:center,$fc:$bright);
 				@extend %font-main_bold;
 					@include mediaq(m){
 						font-size: 1.8em;
@@ -98,6 +110,7 @@
 //ここから目標
 .goal{
 	@include flex($jc:space-between,$ai:center);
+	background-color:$sub-color;
 	position:relative;
 
 		div{
@@ -112,13 +125,11 @@
 		@include height-width($h:30px,$w:82px);
 		@include absolute($at:22%,$ar:3%);
 		@extend %font-family-heading;
-		@include font($fs:30px);
+		@include font($fs:30px,$fc:$bright);
 			@include mediaq(s){
-				@include margin-padding($m:0,$p:12px);
-				@include height-width($h:40px,$w:100vw);
-				@include font($fs:30px,$ta:center,$fc:$bright);
-				background-color: #323232;
-				position:static;
+				@include margin-padding($m:0,$p:10px);
+				@include height-width($h:50px,$w:100vw);
+				@include font($fs:30px,$ta:right,$fc:$bright);
 			}
 	}
 	.goal-about{
@@ -133,16 +144,14 @@
 		box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
 			@include mediaq(m){
 				@include font($fs:1.6rem,$ta:right);
-				@include height-width($w:75%,$h:26%);
-				padding:24px 20px;
+				@include height-width($w:70%,$h:30%);
+				padding:10px;
+				right:3%;
 			}
 			@include mediaq(s){
-				position: static;
-				@include margin-padding($m:0,$p:0);
-				@include font($fs:1.4rem,$ta:center,$fc:#f0f0f0);
-				@include height-width($h:24%,$w:100vw);
-				background-color: #323232;
-				box-shadow:none;
+				@include font($fs:1.4rem,$ta:center);
+				@include height-width($w:90vw,$h:24%);
+				right:0;
 			}
 	}
 
@@ -151,13 +160,9 @@
 		background-image: url('../img/goal2.jpg');
 		background-size: cover;
 			@include mediaq(s){
-				@include height-width($h:300px,$w:100vw);
+				@include height-width($w:80vw,$h:60%);
 				margin: 0;
 			}
-	}
-	
-	@include mediaq(s){
-		@include flex($jc:center,$fd:column,$ai:center);
 	}
 
 }

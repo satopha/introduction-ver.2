@@ -347,6 +347,20 @@ html body .backtop:hover {
   }
 }
 
+.noise {
+  background-image: url(../img/noise.png);
+  animation: noise_anima 1s steps(10) infinite;
+}
+
+@keyframes noise_anima {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 123px 456px;
+  }
+}
+
 .title {
   display: flex;
   justify-content: center;
@@ -378,6 +392,7 @@ html body .backtop:hover {
 }
 
 .limit {
+  background-color: #323232;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -386,7 +401,7 @@ html body .backtop:hover {
   font-weight: normal;
   text-align: center;
   line-height: normal;
-  color: #696969;
+  color: #f0f0f0;
 }
 
 .limit h2 {
@@ -398,7 +413,7 @@ html body .backtop:hover {
   font-weight: normal;
   text-align: center;
   line-height: normal;
-  color: #696969;
+  color: #f0f0f0;
 }
 
 .limit .yycountdown-box .yyc-day, .limit .yycountdown-box .yyc-day-text, .limit .yycountdown-box .yyc-hou, .limit .yycountdown-box .yyc-hou-text, .limit .yycountdown-box .yyc-min, .limit .yycountdown-box .yyc-min-text, .limit .yycountdown-box .yyc-sec, .limit .yycountdown-box .yyc-sec-text {
@@ -406,7 +421,7 @@ html body .backtop:hover {
   font-weight: normal;
   text-align: center;
   line-height: normal;
-  color: #696969;
+  color: #f0f0f0;
 }
 
 @media only screen and (max-width: 960px) {
@@ -496,6 +511,7 @@ html body .backtop:hover {
   justify-content: space-between;
   align-items: center;
   flex-direction: inherit;
+  background-color: #323232;
   position: relative;
 }
 
@@ -519,22 +535,20 @@ html body .backtop:hover {
   font-weight: normal;
   text-align: left;
   line-height: normal;
-  color: #696969;
+  color: #f0f0f0;
 }
 
 @media only screen and (max-width: 480px) {
   .goal h3 {
     margin: 0;
-    padding: 12px;
-    height: 40px;
+    padding: 10px;
+    height: 50px;
     width: 100vw;
     font-size: 30px;
     font-weight: normal;
-    text-align: center;
+    text-align: right;
     line-height: normal;
     color: #f0f0f0;
-    background-color: #323232;
-    position: static;
   }
 }
 
@@ -566,26 +580,23 @@ html body .backtop:hover {
     text-align: right;
     line-height: normal;
     color: #696969;
-    height: 26%;
-    width: 75%;
-    padding: 24px 20px;
+    height: 30%;
+    width: 70%;
+    padding: 10px;
+    right: 3%;
   }
 }
 
 @media only screen and (max-width: 480px) {
   .goal .goal-about {
-    position: static;
-    margin: 0;
-    padding: 0;
     font-size: 1.4rem;
     font-weight: normal;
     text-align: center;
     line-height: normal;
-    color: #f0f0f0;
+    color: #696969;
     height: 24%;
-    width: 100vw;
-    background-color: #323232;
-    box-shadow: none;
+    width: 90vw;
+    right: 0;
   }
 }
 
@@ -598,18 +609,9 @@ html body .backtop:hover {
 
 @media only screen and (max-width: 480px) {
   .goal .img {
-    height: 300px;
-    width: 100vw;
+    height: 60%;
+    width: 80vw;
     margin: 0;
-  }
-}
-
-@media only screen and (max-width: 480px) {
-  .goal {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
   }
 }
 
